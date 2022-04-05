@@ -14,7 +14,7 @@ module.exports = {
     const dataExpiracao = jwt.decode(token).exp;
     const tokenHash = geraTokenHash(token);
     await setAsync(tokenHash, "");
-    blacklist.expireAt(tokenHash, dataExpiracao);
+    blacklist.expireat(tokenHash, dataExpiracao);
   },
 
   contemToken: async (token) => {
